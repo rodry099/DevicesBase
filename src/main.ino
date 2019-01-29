@@ -18,13 +18,10 @@ void callback(char*, byte*, unsigned int);
 void reconnect();
 void registerDevice();
 
-const char* mqtt_server = "192.168.0.166";
-
 WiFiClient espClient;
 PubSubClient client(espClient);
 //Variables **********************
 int pinInt = 2; //pin interruptor
-int FlagAlive = 0;
 String id_disp = "";
 String output = "";
 String canal;
@@ -57,9 +54,7 @@ void setup() {
 
     arranqueNormalJson();
     servidor.begin();
-    //Serial.println(ServerMqtt);
     client.setServer(ServerMqtt.c_str(), 1883);
-    //client.keepAlive(5);
     client.setCallback(callback);
     pinMode(pinInt,OUTPUT); //pin para activar rele;
     digitalWrite(pinInt, 1);
