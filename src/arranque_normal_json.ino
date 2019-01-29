@@ -20,9 +20,12 @@ File setup = SPIFFS.open("/configuracion.txt", "r");
      const char* ip = root["ip"];
      const char* id = root["id"];
      const char* canales = root["canales"];
+     const char* servidorMqtt = root["servidor"];
      int reg = root["registrado"];
      setup.close();
      id_disp = String((const char*)root["id"]);
+     ServerMqtt = String((const char*)root["servidor"]);
+     Serial.println(servidorMqtt);
      registrado = reg; //guarda en variable global registrado el valor de reg 0= no registrado 1= registrado
                       // valor inicial igual a no registrado en el sistema
   //**************************************************

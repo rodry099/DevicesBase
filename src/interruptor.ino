@@ -29,13 +29,13 @@ String id_disp = "";
 String output = "";
 String canal;
 String willmsg; //topic direccion dispositivo
+String ServerMqtt; // direccion del Brokker mqtt
 unsigned int registrado = 0; ///////provisional volver a poner a cero!!!!!!
 int canalRiego;
 const char* estadoRiego;
 
 //Inicializacion Wifi **************
 IPAddress ip(192, 168, 0, 1);
-IPAddress ip_arduino(192, 168, 0, 20);
 ESP8266WebServer server(80);
 WiFiServer servidor(8080);
 PCF8574 PUERTO1(DIRECCION_PCF8574);
@@ -43,8 +43,6 @@ PCF8574 PUERTO2(DIRECCION_PCF8574_2);
 
 void setup() {
 
-   //String responseHttp;
-   //String clienteHeader = "vacio";
    Serial.begin(115200);
    bool result = SPIFFS.begin();
    Serial.println("SPIFFS opened: " + result);
@@ -59,7 +57,8 @@ void setup() {
 
     arranqueNormalJson();
     servidor.begin();
-    client.setServer(mqtt_server, 1883);
+    //Serial.println(ServerMqtt);
+    client.setServer(ServerMqtt.c_str(), 1883);
     //client.keepAlive(5);
     client.setCallback(callback);
     pinMode(pinInt,OUTPUT); //pin para activar rele;

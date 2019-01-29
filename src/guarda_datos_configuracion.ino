@@ -2,7 +2,7 @@ void guarda_config(){
   /*
   creando bufer para archivo Json
   */
-  const int capacidad = JSON_OBJECT_SIZE(10);
+  const int capacidad = JSON_OBJECT_SIZE(16);
   StaticJsonBuffer<capacidad> jb;
   //crea un objeto JsonObject
   JsonObject& configuracion = jb.createObject();
@@ -21,6 +21,7 @@ void guarda_config(){
   configuracion["ip"] = server.arg("ip");
   configuracion["id"] = server.arg("id");
   configuracion["canales"] = server.arg("canal");
+  configuracion["servidor"] = server.arg("Server");
   configuracion["registro"] = 0;
   //*************************************************
   configuracion.prettyPrintTo(setup);

@@ -20,7 +20,7 @@ void callback(char* topic, byte* payload, unsigned int length){
 
         String onOff(estadoRiego);
         String Stopic(topic);
-        Serial.println(Stopic);
+        
     /***************************************
       si recibe el topic device/setup
       llama a la subrutina registerDevices
