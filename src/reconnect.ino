@@ -15,9 +15,9 @@ void reconnect() {
       // ... and resubscribe
 
       client.subscribe("device/setup");
-      client.subscribe("casa/jardin/riego/acciones");
-      client.subscribe("casa/jardin/riego/alive");
-      
+      client.subscribe(serverSwitch.c_str());
+      client.subscribe(serverFeedback.c_str());
+
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());

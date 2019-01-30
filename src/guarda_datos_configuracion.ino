@@ -10,7 +10,7 @@ void guarda_config(){
   server.send(200, "text/html", "Recibidos los datos correctamente");
 
   Serial.print("escribiendo datos");
-  SPIFFS.remove("/configuracion"); //borra archivo. sino se añadirian los datos
+  SPIFFS.remove("/configuracion.txt"); //borra archivo. sino se añadirian los datos
   File setup = SPIFFS.open("/configuracion.txt", "w");
   if(!setup){
     Serial.print("error al abrir archivo setup");
@@ -22,6 +22,7 @@ void guarda_config(){
   configuracion["id"] = server.arg("id");
   configuracion["canales"] = server.arg("canal");
   configuracion["servidor"] = server.arg("Server");
+  configuracion["categoria"] = server.arg("categoria");
   configuracion["registro"] = 0;
   //*************************************************
   configuracion.prettyPrintTo(setup);

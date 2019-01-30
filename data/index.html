@@ -3,17 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Configuracion Dispositivo</title>
+
+<!--************************************************
+        SECCION ESTILOS CSS
+************************************************-->
+
         <style type="text/css">
         	body{
 				background-color: #e6f2ff
 			}
 
 			h1{
-				font-size: 400%;
+				font-size: 200%;
 				text-align: center;
 				color: #00f;
 			}
 
+      h2{
+				font-size: 60%;
+				text-align: center;
+				color: #00f;
+			}
 			label{
 				position: absolute;
 				left: 22%;
@@ -29,7 +39,7 @@
 			div{
 				position: absolute;
 			    left: 25%;
-			    top: 30%;
+			    top: 10%;
 				  width: 40%;
           height: 40%;
 			    border: 25px;
@@ -48,10 +58,11 @@
 			    margin: 2px;
 			}
         </style>
+<!--********FIN ESTILOS CSS*************-->
     </head>
 <body>
 <form action="/CONFIGURACION" method="get">
-<h1>Configuración termostato Wifi</h1>
+<h1>Configuración Wifi del Dispositivo</h1>
 <br/> <br/>
 	<div>
 			<label for="ssid">Ssid: </label>
@@ -62,11 +73,11 @@
 			<input type="text" name="password" id="password">
 			<br/> <br/>
 
-			<label for="ip">Ip: </label>
+			<label for="ip">IP: </label>
 			<input type="text" name="ip" id="ip">
 			<br/> <br/>
 
-      <label for="id">Id disp: </label>
+      <label for="id">ID Device: </label>
 			<input type="text" name="id" id="id">
 			<br/> <br/>
 
@@ -74,14 +85,20 @@
 			<input type="text" name="canal" id="canal">
 			<br/> <br/>
 
-      <label for="Server">Ip BROKKER: </label>
+      <label for="categoria">Categoria: </label>
+			<input type="categoria" name="categoria" id="categoria">
+			<br/> <br/>
+
+      <label for="Server">IP Brokker: </label>
 			<input type="text" name="Server" id="Server">
 			<br/> <br/>
 
-				<div id="botones">
-					<input type="submit" value="Enviar">
-				</div>
+      <input type="submit" value="Enviar">
+      <br/> <br/>
+      <h2>*en id Device identifique el dispositivo por un nombre descriptivo ejem: luz, interruptor etc</h2>
 		</div>
 			</form>
+    <br/><br/>
+
 </body>
 </html>

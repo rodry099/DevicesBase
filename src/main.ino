@@ -27,6 +27,9 @@ String output = "";
 String canal;
 String willmsg; //topic direccion dispositivo
 String ServerMqtt; // direccion del Brokker mqtt
+String categoria; //categoria del dispositivo
+String serverSwitch;
+String serverFeedback;
 unsigned int registrado = 0; ///////provisional volver a poner a cero!!!!!!
 int canalRiego;
 const char* estadoRiego;
@@ -63,6 +66,8 @@ void setup() {
     PUERTO2.write8(0b11111111);
     if(registrado == 1){
       Serial.println("Dispositivo registrado en el sistema");
+      serverSwitch = "server" + categoria + '/' + id_disp + '/' + "switch";
+      serverFeedback = "server" + categoria + '/' + id_disp + '/' + "feedback";
     }
 }
 
