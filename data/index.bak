@@ -13,16 +13,9 @@
 				background-color: #e6f2ff
 			}
 
-      #principal{
-      	background: #333;
-        vertical-align: middle;
-      	color: white;
-      	height: 80px;
-        }
-
 			h1{
 				font-size: 200%;
-        text-align: center;
+				text-align: center;
 				color: #00f;
 			}
 
@@ -46,7 +39,7 @@
 			div{
 				position: absolute;
 			    left: 25%;
-			    top: 20%;
+			    top: 10%;
 				  width: 40%;
           height: 40%;
 			    border: 25px;
@@ -66,38 +59,11 @@
 			}
         </style>
 <!--********FIN ESTILOS CSS*************-->
-
-<!--JAVASCRIPTS
-Comprobacion de datos del dispositivo-->
-<script type="text/javascript">
-
-function comprueba(){
-  var ssid = document.formulario.ssid.value;
-  ssid = ssid.toUpperCase();
-  document.formulario.ssid.value = ssid;
-  if(ssid === ""){
-    alert("no puede estar vacio");
-    return false;
-  }
-
-var ip = document.formulario.ip.value;
-var ipRE = new RegExp('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$');
-    if(!ipRE.test(ip)){
-      alert("corrija la ip no valida");
-    }
-}
-
-</script>
 </head>
 <body>
-  <header id="principal">
-
-    <h1>Configuracion de Dispositivo</h1>
-
-  </header>
-
-<form action = "/CONFIGURACION" name="formulario" onsubmit="return comprueba()" method="get">
-
+<form action="/CONFIGURACION" method="get">
+<h1>Configuración Wifi del Dispositivo</h1>
+<br/> <br/>
 	<div>
 			<label for="ssid">Ssid: </label>
 			<input type="text" name="ssid" id="ssid">
@@ -133,6 +99,6 @@ var ipRE = new RegExp('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$');
 		</div>
 			</form>
     <br/><br/>
-
+    
 </body>
 </html>

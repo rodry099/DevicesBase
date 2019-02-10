@@ -15,8 +15,12 @@ void reconnect() {
       // ... and resubscribe
 
       client.subscribe("device/setup");
-      client.subscribe(serverSwitch.c_str());
-      client.subscribe(serverFeedback.c_str());
+      if(registrado == 1){
+      String topicS = "serverSwitch/" + Topic + "/switch";
+      client.subscribe(topicS.c_str());
+      String topicF = "serverSwitch/" + Topic + "/feedback";
+      client.subscribe(topicF.c_str());
+    }
 
     } else {
       Serial.print("failed, rc=");
