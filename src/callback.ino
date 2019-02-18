@@ -20,7 +20,7 @@ void callback(char* topic, byte* payload, unsigned int length){
 
         String onOff(estadoRiego);
         String Stopic(topic);
-        
+
     /***************************************
       si recibe el topic device/setup
       llama a la subrutina registerDevices
@@ -28,7 +28,7 @@ void callback(char* topic, byte* payload, unsigned int length){
       del archivo configuracion
     ***************************************/
     if(Stopic.equals("device/setup")){
-      registerDevice();
+      registerDevice(estadoRiego);
       registrado = 1;
       return;
     }

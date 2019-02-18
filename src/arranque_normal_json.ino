@@ -26,8 +26,7 @@ File setup = SPIFFS.open("/configuracion.txt", "r");
      id_disp = String((const char*)root["id"]);
      ServerMqtt = String((const char*)root["servidor"]);
      categoria = String((const char*)root["categoria"]);
-     Topic = String((const char*)root["topic"]);
-     Serial.println(Topic);
+     servidorNodeRed = String((const char*)root["servidorNodeRed"]); Serial.println(servidorNodeRed);
      registrado = reg; //guarda en variable global registrado el valor de reg 0= no registrado 1= registrado
                       // valor inicial igual a no registrado en el sistema
   //**************************************************

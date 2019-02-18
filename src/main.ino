@@ -28,7 +28,7 @@ String canal;
 String willmsg; //topic direccion dispositivo
 String ServerMqtt; // direccion del Brokker mqtt
 String categoria; //categoria del dispositivo
-String Topic;
+String servidorNodeRed;
 unsigned int registrado = 0; ///////provisional volver a poner a cero!!!!!!
 int canalRiego;
 const char* estadoRiego;

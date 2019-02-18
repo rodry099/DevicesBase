@@ -23,7 +23,7 @@ void guarda_config(){
   configuracion["canales"] = server.arg("canal");
   configuracion["servidor"] = server.arg("Server");
   configuracion["categoria"] = server.arg("categoria");
-  configuracion["topic"] = server.arg("categoria") + '/' + server.arg("id");
+  configuracion["servidorNodeRed"] = "";
   configuracion["registrado"] = 0;
   //*************************************************
   configuracion.prettyPrintTo(setup);

@@ -16,9 +16,11 @@ void reconnect() {
 
       client.subscribe("device/setup");
       if(registrado == 1){
-      String topicS = "serverSwitch/" + Topic + "/switch";
+      String topicS = servidorNodeRed + "/" + categoria + "/" + id_disp + "/switch";
       client.subscribe(topicS.c_str());
-      String topicF = "serverSwitch/" + Topic + "/feedback";
+      Serial.println(topicS);
+      String topicF = servidorNodeRed + "/" + categoria + "/" + id_disp + "/feedback";
+      Serial.println(topicF);
       client.subscribe(topicF.c_str());
     }
 
